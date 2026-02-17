@@ -632,7 +632,31 @@
       }
       .service-media{min-height:280px;}
     }
-
+    /* ===== RESEÑAS CON FOTO DE FONDO ===== */
+    #resenas{
+      position:relative;
+      overflow:hidden;
+      background:url("assets/reviews/reviews-bg.jpg") center/cover no-repeat;
+    }
+    #resenas::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg, rgba(12,27,92,.76) 0%, rgba(15,45,145,.66) 45%, rgba(183,30,37,.58) 100%);
+    }
+    #resenas .container{
+      position:relative;
+      z-index:1;
+    }
+    #resenas .eyebrow{color:#ffd8d6;}
+    #resenas h2,
+    #resenas .muted{color:#fff;}
+    #resenas .review-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.75);
+      backdrop-filter:blur(4px);
+    }
   </style>
 </head>
 <body>
