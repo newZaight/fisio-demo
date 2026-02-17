@@ -526,6 +526,46 @@
       .reveal{opacity:1;transform:none;filter:none}
       [data-split] .word{opacity:1;transform:none;filter:none}
     }
+        /* Ubicación: menos blanco plano */
+    #ubicacion{
+      background:
+        radial-gradient(700px 260px at 8% 12%, rgba(58,89,255,.10), transparent 70%),
+        radial-gradient(680px 260px at 92% 10%, rgba(227,33,28,.10), transparent 72%),
+        #eef3ff;
+    }
+    #ubicacion .panel{
+      background: linear-gradient(160deg, #edf2ff 0%, #f8faff 100%);
+      border-color:#c9d6ff;
+    }
+    #ubicacion .info-list li{
+      background: rgba(255,255,255,.62);
+      border-color:#bfd0ff;
+      backdrop-filter: blur(4px);
+    }
+    
+    /* CTA final: tarjeta potente, no blanca */
+    .cta{
+      background:
+        radial-gradient(500px 220px at 15% 12%, rgba(255,255,255,.18), transparent 70%),
+        linear-gradient(135deg, #112d9c 0%, #1a3ab8 45%, #c72a27 100%);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      box-shadow:0 20px 42px rgba(17,34,110,.30);
+    }
+    .cta .eyebrow{ color:#ffd9d7; }
+    .cta h2{ color:#fff; }
+    .cta .muted{ color:rgba(255,255,255,.90); }
+    
+    /* Botón secundario dentro CTA */
+    .cta .btn-ghost{
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.34);
+      color:#fff;
+    }
+    .cta .btn-ghost:hover{
+      background: rgba(255,255,255,.22);
+    }
+
   </style>
 </head>
 <body>
