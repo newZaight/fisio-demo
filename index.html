@@ -259,26 +259,6 @@
       .hero h1{max-width: 18ch;}
     }
 
-
-    /* Stats */
-    .stats{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.9rem;margin-top:1.2rem;
-    }
-    .stat{
-      background:#fff;border:1px solid #d4ddff;border-radius:16px;padding:1rem;
-      box-shadow:0 10px 24px rgba(20,44,130,.08);
-      position:relative;overflow:hidden;
-    }
-    .stat::after{
-      content:"";
-      position:absolute;inset:auto -50px -62px auto;
-      width:140px;height:140px;border-radius:50%;
-      background:radial-gradient(circle,#5b75ff22,#5b75ff00 68%);
-      pointer-events:none;
-    }
-    .stat .k{font-size:clamp(1.35rem,4vw,2rem);font-weight:900;line-height:1}
-    .stat .l{font-size:.9rem;color:#55658a;margin-top:.36rem}
-
     /* Services */
     .section-light{
       background:color-mix(in srgb, #fff 78%, transparent);
