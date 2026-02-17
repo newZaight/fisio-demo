@@ -1127,21 +1127,44 @@
       // Año footer
       $("#year").textContent = new Date().getFullYear();
 
-      // Menú móvil
-      const menuBtn = $("#menuBtn");
-      const nav = $("#mainNav");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          const open = nav.classList.toggle("open");
-          menuBtn.setAttribute("aria-expanded", String(open));
-        });
-        $$("#mainNav a").forEach(a => {
-          a.addEventListener("click", () => {
-            nav.classList.remove("open");
-            menuBtn.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
+    // Menú móvil
+    const menuBtn = $("#menuBtn");
+    const nav = $("#mainNav");
+    
+    if (menuBtn && nav) {
+      const setMenu = (open) => {
+        nav.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      };
+    
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setMenu(!nav.classList.contains("open"));
+      });
+    
+      // Cerrar al pulsar un enlace
+      $$("#mainNav a").forEach(a => {
+        a.addEventListener("click", () => setMenu(false));
+      });
+    
+      // Cerrar al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target) && e.target !== menuBtn) {
+          setMenu(false);
+        }
+      });
+    
+      // Cerrar con ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setMenu(false);
+      });
+    
+      // Cerrar al pasar a desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 760) setMenu(false);
+      });
+    }
+
 
       // Efecto de texto por palabras
       const splitTargets = [...document.querySelectorAll("[data-split]")];
